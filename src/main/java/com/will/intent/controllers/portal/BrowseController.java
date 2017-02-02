@@ -28,6 +28,18 @@ public class BrowseController {
         model.addAttribute("count", Long.toString(count));
         model.addAttribute("user", authentication.getName());
 
+        /*
+        MarketProduct product = new MarketProduct();
+        product.setSellerUserName("Henucaru");
+        product.setDescription("boxing glove");
+        product.setProductName("JKD boxing glove");
+        product.setDateAdded(DateTime.now());
+        product.setPrice("12.00");
+        product.setPurchased(false);
+
+        mongo.save(product);
+        */
+
         return "portal/BrowseView";
     }
 }
