@@ -9,6 +9,8 @@
 <body>
 <div th:replace="/layouts/header :: market-header"></div>
 
+
+
 <form name='f' th:action='@{/register}' th:object="${marketUser}" method='POST'>
     <table>
         <tr><td>User:</td><td>
@@ -16,7 +18,7 @@
         <tr><td>Password:</td>
             <td><input type='password' th:field="*{password}" name='password'/></td></tr>
         <tr><td>Email:</td>
-            <td><input type="text" th:field="*{email}" name='Email'/></td></tr>
+            <td><input type="text" th:field="*{email}" class="email-validation" name='Email'/></td></tr>
         <tr><td colspan='2'>
             <input name="submit" type="submit" value="Register"/></td></tr>
     </table>

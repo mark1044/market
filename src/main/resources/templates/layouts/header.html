@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div  th:replace="/layouts/dependencies :: dependencies" ></div>
+<body onload='document.f.username.focus();'>
+<div  th:replace="/layouts/header :: market-header" ></div>
 
-    <div id="header" class="mantis-header" th:fragment="market-header">
-        Main <a th:href="@{/logout}">Logout</a>
-    </div>
 
+<div id="content">
+
+    <form name='f' th:action='@{/login}' method='POST'>
+        <table>
+            <tr><td><input type='text' name='username' value='' placeholder="Username"/></td></tr>
+            <tr><td><input type='password' name='password' placeholder="Password"/></td></tr>
+            <tr><td colspan='2'>
+                <input id="buttonstyle" name="submit" type="submit" value="Continue"/></td> | <a th:href="@{/register}">register</a> </tr>
+
+        </table>
+    </form>
+
+</div>
+
+
+<div th:replace="/layouts/footer :: market-footer" ></div>
+</body>
 </html>
