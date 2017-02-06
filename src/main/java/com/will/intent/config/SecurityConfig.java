@@ -33,6 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        /**
+         * .antMatchers("/**")
+         * .hasRole("USER")
+         */
         http
                 .authorizeRequests()
                 .antMatchers("/favicon.ico").permitAll()
@@ -41,8 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/logout").permitAll()
                 .antMatchers("/register").permitAll()
-                .antMatchers("/**")
-                .hasRole("USER")
                 .and()
                 .formLogin()
                 .loginPage("/login")

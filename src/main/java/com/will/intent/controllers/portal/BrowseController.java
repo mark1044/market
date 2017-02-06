@@ -23,11 +23,8 @@ public class BrowseController {
 
     @RequestMapping("/")
     public String index(Authentication authentication, Model model) {
-        long count = mongo.getCollection("app").count();
-        System.out.println("*************"+count);
-        model.addAttribute("count", Long.toString(count));
-        model.addAttribute("user", authentication.getName());
 
+        System.out.println("contoller ran");
         /*
         MarketProduct product = new MarketProduct();
         product.setSellerUserName("Henucaru");
@@ -40,6 +37,6 @@ public class BrowseController {
         mongo.save(product);
         */
 
-        return "portal/BrowseView";
+        return "/index.html";
     }
 }

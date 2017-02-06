@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+<script src="../static/JS/portal.js"></script>
+
+<!-- ANGULAR JS HYBRID APP PORTAL -->
+<div id="mantis" ng-app="marketApp" ng-init="searchText='JKD boxing glove'"  >
+    <div ng-controller="marketControl">
+
+        <span>{{productDescription}}</span>
+        <textarea ng-model="productDescription"></textarea>
+        <input type="text" ng-model="productDescription" ng-keypress="loadProducts()" />
+
+        name: {{searchText}} <br />
+        description: {{productDescription}}
+
+    </div>
+</div>
+
+
+</html>
