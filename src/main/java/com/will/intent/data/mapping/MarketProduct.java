@@ -29,6 +29,8 @@ public class MarketProduct {
 
     private boolean purchased;
 
+    private Collection<MarketProductTag> tags = new LinkedHashSet<MarketProductTag>();
+
     private Collection<MarketMediaResource> mediaResources = new LinkedHashSet<MarketMediaResource>();
 
     private Collection<MarketIM> imPool = new LinkedHashSet<MarketIM>();
