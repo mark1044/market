@@ -13,21 +13,18 @@
  marketApp refers to an html element in which the application will run
  */
 var app = angular.module('marketApp', ['ngRoute']).config(function($routeProvider){
-    $routeProvider
-        .when('/',{
+    $routeProvider.when('/',{
 
-            templateUrl: 'inkdex.html',
+            templateUrl: 'Portal.html',
             controller: 'marketControl'
 
             }
-        )
-
-        .when('/add_product',{
+        ).when('/add_product',{
 
             templateUrl : 'Products/Add_Product.html',
+            controller : 'addProductController'
 
-
-         })
+         }).otherwise('/');
 
 
 });

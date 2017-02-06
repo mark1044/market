@@ -4,19 +4,22 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
-<script src="../static/JS/portal.js"></script>
+<script src="https://code.angularjs.org/X.Y.Z/angular-route.js"></script>
+<script src="../static/market/portal.js"></script>
 
 <!-- ANGULAR JS HYBRID APP PORTAL -->
-<div id="mantis" ng-app="marketApp" ng-init="searchText='JKD boxing glove'"  >
-    <div ng-controller="marketControl">
+<div id="mantis-market-app" ng-app="marketApp" ng-init=""  >
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#add_product"><i class="fa fa-home"></i>Sell Product</a></li>
+        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+    </ul>
+    <div id="main">
 
-        <span>{{productDescription}}</span>
-        <textarea ng-model="productDescription"></textarea>
-        <input type="text" ng-model="productDescription" ng-keypress="loadProducts()" />
-
-        name: {{searchText}} <br />
-        description: {{productDescription}}
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
 
     </div>
 </div>
