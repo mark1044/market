@@ -38,7 +38,7 @@ app.controller('marketControl', function($scope,$http){
 
 
     $scope.loadProducts = function() {
-        $http.get('/products/' + $scope.searchText).then(function (response) {
+        $http.get('/products/JKD boxing glove').then(function (response) {
             console.log(response.data.description);
             $scope.productDescription = response.data.description;
         });
