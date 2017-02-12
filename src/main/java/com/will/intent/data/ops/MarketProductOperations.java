@@ -7,7 +7,7 @@ import java.util.List;
  */
 public interface MarketProductOperations {
 
-    List<MarketProduct> getProducts();
+    List<MarketProduct> getProductsByTag(String tag, int pg, int count);
     MarketProduct getProduct(String productName);
 
 }

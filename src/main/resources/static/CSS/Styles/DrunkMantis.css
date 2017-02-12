@@ -4,10 +4,26 @@
 
 }
 
+
+.search-container{
+
+    width: 50%;
+    min-height: 45px;
+
+}
+
 .search-box{
 
+    width:100%;
+    background-color: #EEEEEE;
+    font-size: large;
+    font-weight: bold;
 
 
+}
+
+.search-box-auto-complete{
+    width:100%;
 
 }
 

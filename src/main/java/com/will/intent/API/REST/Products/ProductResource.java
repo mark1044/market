@@ -1,10 +1,12 @@
 package com.will.intent.API.REST.Products;
 
+import com.will.intent.API.REST.ApiResponse;
 import com.will.intent.data.mapping.MarketProduct;
 import com.will.intent.data.repo.MarketProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 /**
  * Created by marksmelendez on 1/25/17.
  */
@@ -20,6 +22,14 @@ public class ProductResource {
     private MarketProductRepository productRepo;
 
 
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    public ApiResponse addProduct(@RequestBody MarketProduct product){
+
+        return null;
+    }
+
+
+
     @RequestMapping(value="/{productName}", method = RequestMethod.GET)
     public MarketProduct getProduct(@PathVariable("productName") String productName){
 
@@ -33,6 +43,12 @@ public class ProductResource {
     }
 
 
+    @RequestMapping(value="/{tag}/{pg}/{count}", method = RequestMethod.GET)
+    public List<MarketProduct> getProductsByTag(@PathVariable("tag") String productName, @PathVariable("pg") int pg, @PathVariable("count") int count){
+
+
+        return null;
+    }
 
 
 }

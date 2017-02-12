@@ -3,25 +3,32 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="/webjars/angularjs/1.6.1/angular.js"></script>
-    <script type="text/javascript" src="/webjars/angularjs/1.6.1/angular-route.js"></script>
+    <script type="text/javascript" src="/webjars/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+
     <script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.js"></script>
     <script type="text/javascript" src="/market/portal.js"></script>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css" />
-
+    <link rel="stylesheet" href="/CSS/Styles/DrunkMantis.css" />
 
 </head>
-<!-- ANGULAR JS HYBRID APP PORTAL -->
-<div id="mantis-market-app" ng-app="marketApp" ng-init=""  >
+    <!-- ANGULAR JS HYBRID APP PORTAL -->
+    <div id="mantis-market-app" ng-app="marketApp">
 
-    <div id="main">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="addProduct">Add Product</a></li>
+            </ul>
+        </nav>
+        <div id="main">
 
-        <!-- angular templating -->
-        <!-- this is where content will be injected -->
-        <div ng-view></div>
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+            <div ui-view></div>
 
+        </div>
     </div>
-</div>
 
 
 </html>
