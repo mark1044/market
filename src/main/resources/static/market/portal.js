@@ -44,11 +44,13 @@ app.controller('marketControl', function($scope,$http){
         });
     }
 
+    $scope.clearPlaceholder = function() {
 
+        elt.html('');
+
+    }
 
     $scope.loadProducts();
-
-
 
 
 });
