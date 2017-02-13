@@ -10,6 +10,8 @@ import java.util.LinkedHashSet;
 
 /**
  * Created by marksmelendez on 1/26/17.
+ * May be serializable public class RoomDTO implements Serializable {
+ * test for obstruction of data mapping
  */
 @Document
 public class MarketProduct {

@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,8 +19,16 @@ public class MarketProductRepositoryImpl implements MarketProductOperations {
     MongoOperations mongo;
 
     @Override
-    public List<MarketProduct> getProducts() {
-        return null;
+    public List<MarketProduct> getProductsByTag(String tag, int pg, int count) {
+
+        List<MarketProduct> products = mongo.find(Query.query(Criteria.where("tags").in(tag)).skip(pg*count).limit(count), MarketProduct.class);
+        if(products == null){
+
+            products = Collections.emptyList();
+
+        }
+
+        return products;
     }
 
     @Override
