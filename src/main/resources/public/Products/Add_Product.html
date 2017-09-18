@@ -1,6 +1,28 @@
 
-<div style="width:100%; text-align: center;" >
 
-    <div>Add Product</div>
 
-</div>
+    <div ng-controller="addProductController">
+
+        <form>
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input id="productName" type="text" ng-model="product.productName" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input id="description" type="text" ng-model="product.description" />
+            </div>
+            <div class="form-group">
+                <label for="sellerUserName">Selle Username</label>
+                <input id="sellerUserName" type="text" ng-model="product.sellerUserName" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input id="price" type="text" ng-model="product.price" />
+            </div>
+            <button type="submit" ng-click="SendData()" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+

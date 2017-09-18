@@ -28,16 +28,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             throws Exception {
         auth.userDetailsService(new MarketUserService(userRepository));
     }
-    /*
+       /*
         *.loginPage() for default login behaviour
         */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /**
-         * .antMatchers("/**")
-         * .hasRole("USER")
-         */
-        http
+
+        http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/favicon.ico").permitAll()
                 .antMatchers("/JS/**").permitAll()
@@ -53,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successForwardUrl("/")
                 .and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");;
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
     }
 
 
